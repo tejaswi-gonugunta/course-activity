@@ -1,0 +1,34 @@
+def isPrime(num):
+    count = 0
+    for i in range(1, (num+1)):
+        if num % i == 0:
+           count += 1
+     
+    return count == 2
+    
+def reverse(n):
+     rev =0     
+     while (n>0):
+           rem = n % 10
+           rev =(rev* 10)+rem
+           n = n // 10
+     return rev
+def isPalindromePrime(n):
+    if (isPrime(n) and n==reverse(n)):
+        return True
+    return False
+def isEmirp(n):
+     r=reverse(n)
+     if(isPrime(n) and isPrime(r)):
+         return True
+     return False
+def mersennePrime(n):
+    if(isPrime(n)):
+        return ((2**p)-1)
+    else:
+        print("not primes")
+def TwinPrimes(r):
+    for i in range(2,r+1):
+        for j in range(2,r+1):
+            if isPrime(i) and isPrime(j) and j-i==2:
+               print('(',i,',',j,')')
